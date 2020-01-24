@@ -13,6 +13,12 @@ Contents include:
   - Grabs some input and sets you up a new database and a user with permissions on the database.  Use for prepping a new site.
 
 
+## Installation
+
+Clone to a convenient location.  You may need to set executable permissions.  This ought to do the trick:
+`chmod -R +x *.sh`
+
+
 ## Comments, requests, suggestions
 
 Got an idea that belongs in this repo?  Get in touch with me at ian (at) ianmonroe.com and let me know.  Who knows?  The next good time saver might come from YOU!
