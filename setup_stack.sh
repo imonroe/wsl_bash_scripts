@@ -86,6 +86,22 @@ try sudo chmod 640 /etc/apache2/apache2.conf
 try sudo rm /var/tmp/apache2.conf
 try sudo service apache2 restart
 
+echo 'Setting up CircleCI'
+try cd ~
+try curl -fLSs https://circle.ci/cli > circleci_setup.sh
+try sudo chmod +x circleci_setup.sh
+try sudo ./circleci_setup.sh
+try circleci setup
+try sudo rm ~/circleci_setup.sh
+echo 'CircleCI setup complete'
+
+echo 'Setting up Docker'
+try sudo apt install docker.io
+try sudo systemctl start docker
+try sudo systemctl enable docker
+echo 'Docker setup complete'
+
+
 echo 'Cleaning up.'
 try sudo  apt autoremove
 
