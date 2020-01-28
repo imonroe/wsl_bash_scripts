@@ -99,6 +99,8 @@ echo 'Setting up Docker'
 try sudo apt install docker.io
 try sudo systemctl start docker
 try sudo systemctl enable docker
+try sudo groupadd docker
+try sudo usermod -aG docker $USER
 echo 'Docker setup complete'
 
 
