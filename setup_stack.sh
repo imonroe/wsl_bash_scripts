@@ -34,7 +34,7 @@ try sudo apt-get install curl
 echo 'Installing PHP7.3 and deps.'
 try sudo apt-get install php7.3
 try sudo apt-get install php7.3-cli php7.3-fpm php7.3-json php7.3-pdo php7.3-mysql php7.3-zip php7.3-gd  php7.3-mbstring php7.3-curl php7.3-xml php7.3-bcmath php7.3-json
-apt-get install php-imagick
+try sudo apt-get install php-imagick php-bz2
 
 echo 'Enabling PHP 7.3 support in Apache2'
 try sudo a2enmod proxy_fcgi setenvif
