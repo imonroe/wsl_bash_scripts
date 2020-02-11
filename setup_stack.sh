@@ -34,8 +34,7 @@ try sudo apt-get install curl
 echo 'Installing PHP7.3 and deps.'
 try sudo apt-get install php7.3
 try sudo apt-get install php7.3-cli php7.3-fpm php7.3-json php7.3-pdo php7.3-mysql php7.3-zip php7.3-gd  php7.3-mbstring php7.3-curl php7.3-xml php7.3-bcmath php7.3-json
-apt-get install php-imagick
-apt-get install php-pcov
+try sudo apt-get install php-imagick php-bz2 php-pcov
 
 echo 'Enabling PHP 7.3 support in Apache2'
 try sudo a2enmod proxy_fcgi setenvif
@@ -86,6 +85,24 @@ try sudo cp /var/tmp/apache2.conf /etc/apache2/apache2.conf
 try sudo chmod 640 /etc/apache2/apache2.conf
 try sudo rm /var/tmp/apache2.conf
 try sudo service apache2 restart
+
+echo 'Setting up CircleCI'
+try cd ~
+try curl -fLSs https://circle.ci/cli > circleci_setup.sh
+try sudo chmod +x circleci_setup.sh
+try sudo ./circleci_setup.sh
+try circleci setup
+try sudo rm ~/circleci_setup.sh
+echo 'CircleCI setup complete'
+
+## echo 'Setting up Docker'
+## try sudo apt install docker.io
+## try sudo systemctl start docker
+## try sudo systemctl enable docker
+## try sudo groupadd docker
+## try sudo usermod -aG docker $USER
+## echo 'Docker setup complete'
+
 
 echo 'Cleaning up.'
 try sudo  apt autoremove
