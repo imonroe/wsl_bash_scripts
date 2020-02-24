@@ -34,13 +34,12 @@ try sudo apt-get install curl
 echo 'Installing PHP7.3 and deps.'
 try sudo apt-get install php7.3
 try sudo apt-get install php7.3-cli php7.3-fpm php7.3-json php7.3-pdo php7.3-mysql php7.3-zip php7.3-gd  php7.3-mbstring php7.3-curl php7.3-xml php7.3-bcmath php7.3-json
-try sudo apt-get install php7.3-intl php-xml php-imagick php-bz2 php-pcov 
+try sudo apt-get install php7.3-intl php-xml php-imagick php-bz2 php-pcov imagemagick php7.3-imagick
 
 echo 'Enabling PHP 7.3 support in Apache2'
 try sudo a2enmod proxy_fcgi setenvif
 try sudo a2enconf php7.3-fpm
 try sudo a2enmod rewrite
-try sudo pecl install imagick
 try sudo service apache2 restart
 
 echo 'Setting up SSL certificates for lvh.me'
@@ -57,8 +56,8 @@ try sudo service apache2 restart
 echo 'Setting up SQL'
 try sudo apt-get install software-properties-common
 try sudo apt-get install mysql-server mysql-client
+try sudo mysql_secure_installation
 try sudo service mysql start
-try sudo mysql_secure_installation 
 
 echo 'Setting up Composer'
 try sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
