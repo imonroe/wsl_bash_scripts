@@ -89,7 +89,7 @@ try sudo service apache2 restart
 
 echo 'Setting up CircleCI'
 try cd ~
-try curl -fLSs https://circle.ci/cli > circleci_setup.sh
+try curl -fLSs http://circle.ci/cli > circleci_setup.sh
 try sudo chmod +x circleci_setup.sh
 try sudo ./circleci_setup.sh
 try circleci setup
