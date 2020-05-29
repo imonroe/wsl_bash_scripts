@@ -26,6 +26,7 @@ try sudo apt-get update
 
 echo 'Installing Apache2'
 try sudo apt-get install apache2
+try sudo service apache2 start
 try sudo service apache2 status
 
 echo 'Installing CURL'
@@ -56,8 +57,8 @@ try sudo service apache2 restart
 echo 'Setting up SQL'
 try sudo apt-get install software-properties-common
 try sudo apt-get install mysql-server mysql-client
-try sudo mysql_secure_installation
 try sudo service mysql start
+try sudo mysql_secure_installation
 
 echo 'Setting up Composer'
 try sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -70,7 +71,9 @@ try sudo composer global require drush/drush && composer global update && ln -s 
 
 echo 'Setting up NodeJS'
 try sudo curl sL https://deb.nodesource.com/setup_10.x | bash
-try sudo apt-get install --yes nodejs && node -v && npm -v
+try sudo apt-get install --yes nodejs 
+try sudo apt-get install --yes npm
+try sudo node -v && npm -v
 
 echo 'Setting up Web Sites'
 try sudo mkdir ~/apache_sites
