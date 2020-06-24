@@ -87,3 +87,6 @@ ian@local-wsl1-ubuntu-18.04
 
 That should help you to know at a glance which WSL you're using for what.
 
+## How can I browse files in the WSL2 filesystem in native Windows?
+
+You can map the WLS2 filesystem as a network location, using the `\\wsl$` address.  That will open up the file systems of any Linux distros you have installed, as well as Docker stuff.  Map your desired distro as a network location, and you can browse it, use it as a folder in VSCode, etc.
