@@ -14,6 +14,7 @@ die() { yell "$*"; exit 111; }
 try() { "$@" || die "cannot $*"; }
 
 echo 'Setting up a LAMP stack in WSL.'
+echo '*** THIS SCRIPT WORKS IN UBUNTU 18.04. DIFFERENT PLATFORMS MAY NOT FUNCTION PROPERLY ***'
 echo 'Moving to home directory.'
 cd ~
 
@@ -57,8 +58,16 @@ try sudo service apache2 restart
 echo 'Setting up SQL'
 try sudo apt-get install software-properties-common
 try sudo apt-get install mysql-server mysql-client
-try sudo service mysql start
 try sudo mysql_secure_installation
+try sudo service mysql start
+
+# If mysql doesn't let you log in locally:
+# sudo mysql -u root -p
+# mysql> use mysql
+# mysql> update user set authentication_string=PASSWORD("mypass") where user='root';
+# mysql> flush privileges;
+# mysql> quit;
+
 
 echo 'Setting up Composer'
 try sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
