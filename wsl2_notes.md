@@ -27,6 +27,12 @@ The second thing to realize is that WSL2 sets up a section of your hard drive to
   - Open powershell as an administrator
   - run `wsl --set-default-version 2`
 
+- Update your current WSL distro to use version 2
+  - Get the name of the distro you wish to change: `wsl --list --verbose`
+  - Convert it to version 2: `wsl --set-version <Distro> 2`
+  
+-- OR -- 
+
 - Install a new linux distro into your fresh WSL2 installation.
   - I suggest Ubuntu 20.04 LTS, which is the newest Ubuntu as of this writing.
   - You can get it here: https://www.microsoft.com/store/apps/9n6svws3rx71
