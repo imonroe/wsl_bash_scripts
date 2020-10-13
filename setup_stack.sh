@@ -58,8 +58,9 @@ try sudo service apache2 restart
 echo 'Setting up SQL'
 try sudo apt-get install software-properties-common
 try sudo apt-get install mysql-server mysql-client
-try sudo mysql_secure_installation
 try sudo service mysql start
+try sudo mysql_secure_installation
+
 
 # If mysql doesn't let you log in locally:
 # sudo mysql -u root -p
