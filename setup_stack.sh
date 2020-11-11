@@ -22,8 +22,14 @@ echo 'Adding PHP repos.'
 try sudo add-apt-repository ppa:ondrej/php
 try sudo add-apt-repository ppa:ondrej/apache2
 
+echo 'Adding Git repo.'
+try sudo add-apt-repository -y ppa:git-core/ppa
+
 echo 'Apt update.'
 try sudo apt-get update
+
+echo 'Installing Git.'
+sudo apt-get install git -y
 
 echo 'Installing Apache2'
 try sudo apt-get install apache2
